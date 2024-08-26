@@ -41,8 +41,10 @@ jobs:
       - name: Query available board configs
         id: query
         run: |
+          echo "=============================="
           echo "linux=$(./bsp json profile linux)" >> $GITHUB_OUTPUT
           echo "u-boot=$(./bsp json profile u-boot)" >> $GITHUB_OUTPUT
+          echo "=============================="
   build_u-boot:
     needs: query
     runs-on: ubuntu-latest
