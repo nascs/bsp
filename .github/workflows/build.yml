@@ -52,7 +52,7 @@ jobs:
         profiles: ${{fromJSON(needs.query.outputs.u-boot)}}
     steps:
       - name: Build
-        uses: radxa-repo/bsp@main
+        uses: nascs/bsp@build_test
         with:
           target: ${{ matrix.targets }}
           edition: ${{ matrix.profiles }}
@@ -66,7 +66,7 @@ jobs:
         profiles: ${{fromJSON(needs.query.outputs.linux)}}
     steps:
       - name: Build
-        uses: radxa-repo/bsp@main
+        uses: nascs/bsp@build_test
         with:
           target: ${{ matrix.targets }}
           edition: ${{ matrix.profiles }}
